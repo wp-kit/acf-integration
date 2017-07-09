@@ -116,4 +116,4 @@ PHP 5.6+
 
 ## License
 
-WPKit Invoker is open-sourced software licensed under the MIT License.
+WPKit ACF Integration is open-sourced software licensed under the MIT License.
