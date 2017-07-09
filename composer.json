@@ -1,0 +1,36 @@
+{
+	"name": "wp-kit/acf-integration",
+	"description": "A Wordpress PHP Component to handle ACF configuration",
+	"keywords": ["wordpress", "themosis", "oop", "acf"],
+	"homepage" : "https://github.com/wp-kit/acf-integration",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Creative Little Dots",
+			"email" : "tech@creativelittledots.co.uk",
+			"homepage" : "https://creativelittledots.co.uk/",
+			"role" : "Developers"
+		}
+	],
+	"require": {
+        "php": ">=5.6.4",
+        "illuminate/container": "5.*",
+        "illuminate/support": "5.*"
+    },
+	"type": "library",
+	"autoload": {
+        "psr-4": {
+            "WPKit\\Integrations\\Acf\\": "src/Acf" 
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "config": {
+		"preferred-install": "dist"
+	},
+	"repositories": [
+	],
+	"scripts": {
+	}
+}
