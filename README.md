@@ -1,6 +1,6 @@
 # WPKit ACF Integration
 
-This is a Wordpress PHP Component to handle ACF Configuration. 
+This is a Wordpress PHP Component that handles ACF Configuration. 
 
 This PHP Component was built to run within an Illuminate Container so is perfect for frameworks such as Themosis.
 
