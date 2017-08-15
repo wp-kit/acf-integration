@@ -1,6 +1,6 @@
 # WPKit ACF Integration
 
-This is a Wordpress PHP Component that handles ACF Configuration. 
+This is a Wordpress PHP Component that handles ACF Configuration via a [config file](config/acf.config.php).
 
 This PHP Component was built to run within an Illuminate Container so is perfect for frameworks such as Themosis.
 
@@ -14,7 +14,9 @@ If you're using Themosis, install via composer in the Themosis route folder, oth
 composer require "wp-kit/acf-integration"
 ```
 
-## Registering Service Provider
+## Setup
+
+### Add Service Provider
 
 **Within Themosis Theme**
 
@@ -54,8 +56,7 @@ $provider = new WPKit\Integrations\Acf\AcfServiceProvider($container); // inject
 $provider->register(); //register service provider
 ```
 
-
-## Config
+### Add Config File
 
 The recommended method of installing config files for WPKit Components is via ```wp-kit/vendor-publish``` command.
 
@@ -70,6 +71,10 @@ Once installed you can run:
 For more information, please visit [wp-kit/vendor-publish](https://github.com/wp-kit/vendor-publish).
 
 Alternatively, you can place the [config file(s)](config) in your ```theme/resources/config``` directory manually.
+
+## Usage
+
+Please install and study the default [config file](config/acf.config.php) as described above to learn how to use this component.
 
 ## Requirements
 
