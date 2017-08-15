@@ -57,54 +57,19 @@ $provider->register(); //register service provider
 
 ## Config
 
-Now just add the configuration file in your config directory:
+The recommended method of installing config files for WPKit Components is via ```wp-kit/vendor-publish``` command.
 
-```php
-// In theme/resources/config/acf.config.php
+First, [install WP CLI](http://wp-cli.org/), and then install the package via:
 
-return [
+```wp package install wp-kit/vendor-publish```
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACF Options Args
-    |--------------------------------------------------------------------------
-    |
-    | Tell the Service Provider which pages to register in the admin area
-    |
-    */
+Once installed you can run:
 
-    'pages' => [
-	    [
-		    'type' => 'page',
-		    'args => [
-				// see https://www.advancedcustomfields.com/resources/acf_add_options_page/
-			]
-	    ],
-	    [
-		    'type' => 'subpage',
-		    'args' => [
-			    // see https://www.advancedcustomfields.com/resources/acf_add_options_sub_page/
-			]
-		]
-    ],
+```wp kit vendor:publish```
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACF JSON Path
-    |--------------------------------------------------------------------------
-    |
-    | Tell the Server Provider where to find JSON files to save and load
-    | configurations from. By default the below function loads from:
-    |
-    | ~/theme/resources/acf/
-    |
-    */
+For more information, please visit [wp-kit/vendor-publish](https://github.com/wp-kit/vendor-publish).
 
-    'json_path' => resources_path('acf')
-
-];
-
-```
+Alternatively, you can place the [config file(s)](config) in your ```theme/resources/config``` directory manually.
 
 ## Requirements
 
