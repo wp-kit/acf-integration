@@ -6,6 +6,14 @@
     use Exception;
 
 	class AcfServiceProvider extends IntegrationServiceProvider {
+		
+	public function boot() {
+		
+		$this->publishes([
+			__DIR__.'/../../config/acf.config.php' => config_path('acf.config.php')
+		], 'config');
+	
+	}
     	
     	public function startIntegration() {
         	
