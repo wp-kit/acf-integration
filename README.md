@@ -1,6 +1,6 @@
 # wp-kit/acf-integration
 
-This is a Wordpress PHP Component that handles ```ACF``` Configuration via a [config file](config/acf.config.php).
+This is a Wordpress PHP Component that handles ```ACF``` (Advanced Custom Fields) Configuration via a [config file](config/acf.config.php).
 
 This PHP Component was built to run within an ```Illuminate\Container\Container``` so is perfect for frameworks such as ```Themosis```.
 
