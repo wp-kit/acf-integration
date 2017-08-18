@@ -14,16 +14,14 @@
 	],
 	"require": {
         "php": ">=5.6.4",
-        "wp-kit/integrations": "dev-master"
+        "wp-kit/integrations": "dev-master",
+	"wp-kit/utils": "dev-master"
     },
 	"type": "library",
 	"autoload": {
         "psr-4": {
             "WPKit\\Integrations\\Acf\\": "src/Acf" 
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "config": {
 		"preferred-install": "dist"
