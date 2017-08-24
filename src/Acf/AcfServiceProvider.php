@@ -2,10 +2,10 @@
     
     namespace WPKit\Integrations\Acf;
     
-    use WPKit\Integrations\IntegrationServiceProvider;
+    use WPKit\Integrations\Integration;
     use Exception;
 
-	class AcfServiceProvider extends IntegrationServiceProvider {
+	class AcfServiceProvider extends Integration {
 		
 	public function boot() {
 		
