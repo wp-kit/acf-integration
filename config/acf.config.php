@@ -17,13 +17,21 @@
 		    [
 			    'type' => 'page',
 			    'args' => [
-					// see https://www.advancedcustomfields.com/resources/acf_add_options_page/
+					'page_title' => 'Options'
 				]
 		    ],
 		    [
 			    'type' => 'subpage',
 			    'args' => [
-				    // see https://www.advancedcustomfields.com/resources/acf_add_options_sub_page/
+				    'page_title' => 'Options 2',
+				    'parent_slug' 	=> 'acf-options-options',
+				]
+			],
+			[
+			    'type' => 'subpage',
+			    'args' => [
+				    'page_title' => 'Options 3',
+				    'parent_slug' 	=> 'acf-options-options',
 				]
 			]
 	    ],
