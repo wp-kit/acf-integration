@@ -59,14 +59,14 @@
 		        	
 	        	}
 								
-				add_filter('acf/settings/save_json', function($path) use($settings) {
+				add_filter('acf/settings/save_json', function($path) {
 				   
 				    // return
 				    return $this->app['config.factory']->get('acf.json_path', resources_path('acf'));
 					
 				} );
 				
-				add_filter('acf/settings/load_json',  function($paths) use($settings) {
+				add_filter('acf/settings/load_json',  function($paths) {
 				
 					// update path
 				    $paths[] = $this->app['config.factory']->get('acf.json_path', resources_path('acf'));
