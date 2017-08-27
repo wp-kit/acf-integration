@@ -1,6 +1,6 @@
 {
 	"name": "wp-kit/acf-integration",
-	"description": "A Wordpress PHP Component that handles ACF Configuration",
+	"description": "A wp-kit component that handles ACF configuration",
 	"keywords": ["wordpress", "themosis", "oop", "acf"],
 	"homepage" : "https://github.com/wp-kit/acf-integration",
 	"license": "MIT",
