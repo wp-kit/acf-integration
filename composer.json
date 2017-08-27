@@ -1,7 +1,7 @@
 {
 	"name": "wp-kit/acf-integration",
 	"description": "A wp-kit component that handles ACF configuration",
-	"keywords": ["wordpress", "themosis", "oop", "acf"],
+	"keywords": ["wordpress", "themosis", "wp-kit", "assely", "oop", "acf", "advanced custom fields"],
 	"homepage" : "https://github.com/wp-kit/acf-integration",
 	"license": "MIT",
 	"authors": [
