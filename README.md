@@ -4,7 +4,7 @@ This is a wp-kit component that handles [```ACF```](https://www.advancedcustomfi
 
 This component was built to run within an [```Illuminate\Container\Container```](https://github.com/illuminate/container/blob/master/Container.php) so is perfect for frameworks such as [```Themosis```](http://framework.themosis.com/), [```Assely```](https://assely.org/) and [```wp-kit/theme```](https://github.com/wp-kit/theme).
 
-This component is simply a [```ServiceProvider```](https://github.com/wp-kit/acf-integration/blob/master/src/Acf/AcfServiceProvider.php) which helps to simplify the configuration of ```ACF``` JSON Path and Options Page.
+This component is simply a [```ServiceProvider```](https://github.com/wp-kit/acf-integration/blob/master/src/Acf/AcfServiceProvider.php) which helps to simplify the configuration of ```ACF``` JSON paths and option pages.
 
 ## Installation
 
