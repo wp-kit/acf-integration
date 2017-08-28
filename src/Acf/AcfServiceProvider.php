@@ -7,14 +7,24 @@
 
 	class AcfServiceProvider extends Integration {
 		
-	public function boot() {
+		/**
+	     * Boot the service provider.
+	     *
+	     * @return void
+	     */
+		public function boot() {
+			
+			$this->publishes([
+				__DIR__.'/../../config/acf.config.php' => config_path('acf.config.php')
+			], 'config');
 		
-		$this->publishes([
-			__DIR__.'/../../config/acf.config.php' => config_path('acf.config.php')
-		], 'config');
-	
-	}
+		}
     	
+    	/**
+	     * Start the integration.
+	     *
+	     * @return void
+	     */
     	public function startIntegration() {
         	
         	if( function_exists('acf_add_options_page') ) {
