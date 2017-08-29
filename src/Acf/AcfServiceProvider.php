@@ -26,6 +26,12 @@
 	     * @return void
 	     */
     	public function startIntegration() {
+		
+		if( defined( 'WP_CLI' ) && WP_CLI ) {
+				
+				return false;
+				
+			}
         	
         	if( function_exists('acf_add_options_page') ) {
 	        	
