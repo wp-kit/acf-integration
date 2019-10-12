@@ -32,6 +32,16 @@
 				return false;
 				
 			}
+		
+		if( function_exists('acf_register_block_type') ) {
+	        	
+	        	foreach($this->app['config.factory']->get('acf.blocks', []) as $block) {
+				
+				acf_register_block_type($block);
+				
+			}
+			
+		}
         	
         	if( function_exists('acf_add_options_page') ) {
 	        	
