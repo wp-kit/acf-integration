@@ -52,14 +52,6 @@
 			        	throw new Exception( 'ACF page is misconfigured and has missing $type or $args attributes' );
 			        	
 		        	}
-		        	
-		        	if( ! empty( $page['args']['icon_url'] ) ) {
-		        	
-			        	$icon = &$page['args']['icon_url'];
-			        	
-			        	$icon = ! filter_var($icon, FILTER_VALIDATE_URL) ? get_asset( $icon ) : null;
-
-					}
 					
 		        	switch( $page['type'] ) {
 			        	
