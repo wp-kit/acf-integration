@@ -27,35 +27,35 @@
 	     */
     	public function startIntegration() {
 		
-		if( defined( 'WP_CLI' ) && WP_CLI ) {
+			if( defined( 'WP_CLI' ) && WP_CLI ) {
 				
 				return false;
 				
 			}
 		
-		if( function_exists('acf_register_block_type') ) {
-			
-			$defaults = [
-				'category' => 'rest-kit-example-blocks',
-				'render_callback' => [$this, 'renderBlock']
-			];
-	        	
-	        	foreach($this->app['config.factory']->get('acf.blocks', []) as $block) {
+			if( function_exists('acf_register_block_type') ) {
 				
-				$block = array_merge($defaults, $block);
+				$defaults = [
+					'category' => 'rest-kit-example-blocks',
+					'render_callback' => [$this, 'renderBlock']
+				];
+		        	
+		        	foreach($this->app['config.factory']->get('acf.blocks', []) as $block) {
+					
+					$block = array_merge($defaults, $block);
+					
+					acf_register_block_type($block);
+					
+				}
 				
-				acf_register_block_type($block);
+				filter( 'block_categories', function($categories, $post) {
+					return array_merge(
+						$this->app['config.factory']->get('acf.block_categories', []),
+						$categories
+					);
+				}, 10, 2);
 				
 			}
-			
-			filter( 'block_categories', function($categories, $post) {
-				return array_merge(
-					$categories,
-					$this->app['config.factory']->get('acf.block_categories', [])
-				);
-			}, 10, 2);
-			
-		}
         	
         	if( function_exists('acf_add_options_page') ) {
 	        	
