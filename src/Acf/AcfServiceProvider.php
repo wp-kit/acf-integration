@@ -56,6 +56,23 @@
 				}, 10, 2);
 				
 			}
+			
+			if( $this->app['config.factory']->get('acf.api.transform_post_objects_to_response', false) ) {
+				
+				action('rest_api_init', function () {
+					
+					filter('acf/format_value/type=post_object', 'transformPostObjectToResponse');
+					filter('acf/format_value/type=relationship', function($value) {
+						$value = is_array($value) ? $value : [];
+						foreach($value as &$post) {
+							$post = $this->transformPostObjectToResponse($post);
+						}
+						return $value;
+					});
+					
+				});	
+					
+			}
         	
         	if( function_exists('acf_add_options_page') ) {
 	        	
@@ -123,6 +140,14 @@
 			
 		}
         
-       
+		public function transformPostObjectToResponse($value) {
+
+			if($value instanceof \WP_Post) {
+				$response = (new \WP_REST_Posts_Controller($value->post_type))->prepare_item_for_response($value, ['context' => 'view']);
+				$value = $response->data;
+			}
+			return $value;
+			
+		}
         
     }
