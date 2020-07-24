@@ -18,7 +18,8 @@
 	"require": {
         "php": ">=7.2",
         "wp-kit/integrations": "2.*",
-	"wp-kit/utils": "2.*"
+		"wp-kit/utils": "2.*",
+		"illuminate/view": "^6.0"
     },
 	"type": "library",
 	"autoload": {
