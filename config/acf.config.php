@@ -46,6 +46,13 @@
 	    */
 	
 	    'blocks' => [],
+		
+	    'block_categories' => [
+		    [
+				'slug' => 'rest-kit-example-blocks',
+				'title' => 'Rest Kit Examples',
+			]
+	   	],
 	
 	    /*
 	    |--------------------------------------------------------------------------
