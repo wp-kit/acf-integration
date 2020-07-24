@@ -117,7 +117,7 @@
 	     *
 	     * @return string
 	     */
-		public static function renderBlock($block, $inner_blocks) {
+		public function renderBlock($block, $inner_blocks) {
 			
 			echo view('blocks.' . $block['name'], compact('block', 'inner_blocks'));
 			
