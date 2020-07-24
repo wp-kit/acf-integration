@@ -34,12 +34,26 @@
 			}
 		
 		if( function_exists('acf_register_block_type') ) {
+			
+			$defaults = [
+				'category' => 'rest-kit-example-blocks',
+				'render_callback' => [$this, 'renderBlock']
+			];
 	        	
 	        	foreach($this->app['config.factory']->get('acf.blocks', []) as $block) {
+				
+				$block = array_merge($defaults, $block);
 				
 				acf_register_block_type($block);
 				
 			}
+			
+			filter( 'block_categories', function($categories, $post) {
+				return array_merge(
+					$categories,
+					$this->app['config.factory']->get('acf.block_categories', [])
+				);
+			}, 10, 2);
 			
 		}
         	
@@ -97,6 +111,17 @@
 			}
             
         }
+		
+		/**
+	     * Output block HTML
+	     *
+	     * @return string
+	     */
+		public static function renderBlock($block, $inner_blocks) {
+			
+			echo view('blocks.' . $block['name'], compact('block', 'inner_blocks'));
+			
+		}
         
        
         
