@@ -73,6 +73,12 @@
 				});	
 					
 			}
+		
+			if( $this->app['config.factory']->get('acf.api.transform_numbers_to_floats', false) ) {
+				
+				filter('acf/format_value/type=number', function($value) { return (int) $value; });
+					
+			}
         	
         	if( function_exists('acf_add_options_page') ) {
 	        	
