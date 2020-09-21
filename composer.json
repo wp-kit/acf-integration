@@ -19,7 +19,7 @@
         "php": "^7.4",
         "wp-kit/integrations": "2.*",
 		"wp-kit/utils": "2.*",
-		"illuminate/view": "^6.0"
+		"illuminate/view": "^8.0"
     },
 	"type": "library",
 	"autoload": {
