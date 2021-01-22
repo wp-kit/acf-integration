@@ -98,7 +98,7 @@
 						}
 					}
 			
-					return array_values(array_filter($blocks, fn($block) => $block->blockName));
+					return $blocks;
 					
 				});	
 					
