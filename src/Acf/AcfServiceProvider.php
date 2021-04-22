@@ -76,31 +76,7 @@
 		
 			if( $this->app['config.factory']->get('acf.api.transform_blocks_for_api', false) ) {
 				
-				action('rest_response_parse_blocks', function ($blocks) {
-					
-					foreach($blocks as &$block) {
-				
-						if(strpos($block->blockName, 'acf/') === 0) {
-				
-							acf_setup_meta( json_decode(json_encode($block->attrs->data), true), $block->attrs->id, true );
-					
-							$id = $block->attrs->id;
-					
-							unset($block->attrs->name);
-							unset($block->attrs->id);
-							unset($block->attrs->data);
-					
-							$block->attrs = (object) array_merge((array) $block->attrs, get_fields($id));
-						}
-				
-						if(!empty($block->innerBlocks) && is_array($block->innerBlocks)) {
-							$block->innerBlocks = wp_rest_api_blocks_transform($block->innerBlocks);
-						}
-					}
-			
-					return $blocks;
-					
-				});	
+				action('rest_response_parse_blocks', 'transformBlocks');	
 					
 			}
 		
@@ -183,6 +159,32 @@
 				$value = $response->data;
 			}
 			return $value;
+			
+		}
+		
+		protected function transformBlocks($blocks) {
+					
+			foreach($blocks as &$block) {
+		
+				if(strpos($block->blockName, 'acf/') === 0) {
+		
+					acf_setup_meta( json_decode(json_encode($block->attrs->data), true), $block->attrs->id, true );
+			
+					$id = $block->attrs->id;
+			
+					unset($block->attrs->name);
+					unset($block->attrs->id);
+					unset($block->attrs->data);
+			
+					$block->attrs = (object) array_merge((array) $block->attrs, get_fields($id));
+				}
+		
+				if(!empty($block->innerBlocks) && is_array($block->innerBlocks)) {
+					$block->innerBlocks = $this->transformBlocks($block->innerBlocks);
+				}
+			}
+	
+			return $blocks;
 			
 		}
         
