@@ -162,7 +162,7 @@
 			
 		}
 		
-		protected function transformBlocks($blocks) {
+		public function transformBlocks($blocks) {
 					
 			foreach($blocks as &$block) {
 		
